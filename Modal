@@ -1,0 +1,20 @@
+$('[data=...],.class, #id').on('click', function() {
+      $('[data=...],.class, #id').fadeIn('slow');
+    });
+    $('[data=...],.class, #id').on('click', function(){
+      $('[data=...],.class, #id').fadeOut('slow');
+    });
+   
+    $('[data=...],.class, #id').each(function(i) {
+      $(this).on('click', function() {
+        $('#id .where_to').text($('.from').eq(i).text());
+        $('[data=...],.class, #id').fadeIn('slow');
+      })
+    });
+    
+    //close if esc key is pressed
+    $('body').keyup(function(e){
+      if (e.keyCode == 27) { 
+          $('[data=...],.class, #id').fadeOut();
+      }
+    });
